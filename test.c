@@ -11,7 +11,7 @@ void menu()//菜单栏
 }
 void game()
 {
-	char receive;
+	char receive=0;
 	//数组存放走出的棋盘信息
 	char borad[ROW][COL] = {0};//全部空格
 	//初始化棋盘
@@ -30,6 +30,7 @@ void game()
 			break;
 		}
 		//电脑下棋
+		printf("1");
 		ComputerMove(borad, ROW, COL);
 		DisplayBorad(borad, ROW, COL);
 		//判断电脑输赢
