@@ -64,15 +64,15 @@ void DisplayBorad(char borad[ROW][COL], int row, int col)
 	}
 void PlayerMove(char borad[ROW][COL], int row, int col)
 {
-	int x;
-	int y;
+	int x=0;
+	int y=0;
 	printf("玩家请走\n");
 	while (1)
 	{
-		printf("请玩家输入要下的坐标\n");
-		scanf("%d %d", &x, &y);
+		printf("请玩家输入要下的坐标:");
+		scanf("%d%d", &x, &y);
 		//判断玩家输入的坐标的合法性
-		if ((x >= 1 && x <= row) ,(y >= 1 && y <= col))
+		if (x >= 1 && x <= row ,y >= 1 && y <= col)
 		{
 			if (borad[x - 1][y - 1] == ' ')
 			{
@@ -92,8 +92,8 @@ void PlayerMove(char borad[ROW][COL], int row, int col)
 }
 void ComputerMove(char borad[ROW][COL], int row, int col)
 {
-	int x;
-	int y;
+	int x=0;
+	int y=0;
 	printf("电脑走\n");
 	while (1)
 	{
@@ -128,7 +128,7 @@ char IsWin(char borad[ROW][COL], int row, int col)
 	//判断行
 	for (i = 0; i < row; i++)
 	{
-		if ((borad[i][0] == borad[i][1]) && (borad[i][1] == borad[i][2]&& borad[i][1] != ' '))
+		if (borad[i][0] == borad[i][1] && borad[i][1] == borad[i][2]&& borad[i][1] != ' ')
 		{
 			return borad[i][1];
 		}
@@ -155,5 +155,5 @@ char IsWin(char borad[ROW][COL], int row, int col)
 	{
 		return 'Q';
 	}
-		return "C";
+	return "C";
 }
